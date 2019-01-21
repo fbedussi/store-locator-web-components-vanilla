@@ -1,0 +1,41 @@
+search-box {
+    --border-thickness: 2px;
+    margin-bottom: 1rem;
+}
+.searchInputAndButtons {
+    display: flex;
+}
+.searchInputAndIcons {
+    display: flex;
+    border: solid var(--border-thickness) black;
+    margin-right: 0.5rem;
+    flex: 1;
+}
+search-suggestions {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    transform: translateY(calc(100% + 2px));
+}
+search-suggestions [open="true"] ul {
+    border: solid 1px lightgray;
+    box-shadow: 2px 2px 2px lightgray;
+}
+search-suggestions ul {
+    background-color: white;
+    padding: var(--padding);
+}
+.searchIcon {
+    width: var(--input-height);
+    height: var(--input-height);
+    padding: var(--padding);
+}
+.searchInput {
+    flex: 1;
+    position: relative;
+}
+.geolocalizeIcon {
+    height: calc(var(--input-height) + (var(--border-thickness) * 2));
+    width: calc(var(--input-height) + (var(--border-thickness) * 2));
+}

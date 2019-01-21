@@ -1,0 +1,69 @@
+.storeDetails {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: block;
+}
+.backButton {
+    background-color: black;
+    color: white;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.backIcon {
+    width: var(--input-height);
+    height: var(--input-height); 
+    display: inline-block;
+    stroke: white;
+    width: 100%;
+    height: 100%;
+}
+.storeDetails .store {
+    padding: var(--padding);
+}
+.storeDetails .store_name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.storeDetails .store_mail,
+.storeDetails .store_phone {
+    display: flex;
+    align-items: center;
+}
+.storeDetails .store_mail {
+    margin-bottom: 0.25rem;
+}
+.storeDetails .store_phone {
+    margin-bottom: 0.75rem;
+}
+.storeDetails .icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.storeDetails .store_mail,
+.storeDetails .store_categories {
+    margin-bottom: 0.5rem;
+}
+.storeDetails .store_categories li {
+    display: inline;
+}
+.storeDetails .store_categories li::after {
+    content: ", ";
+}
+.storeDetails .store_categories li:last-child::after {
+    content: ".";
+}
+.storeDetails .store_categoriesTitle,
+.storeDetails .store_servicesTitle {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+}

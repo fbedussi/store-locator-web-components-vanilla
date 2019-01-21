@@ -1,0 +1,26 @@
+filter-panel {
+    padding: var(--padding);
+}
+.filter-panel_toggleBtn {
+    display: inline-flex;
+    align-items: center;
+}
+.filter-panel_toggleBtn_text {
+    margin-right: 0.5rem;
+}
+.filter-panel_arrow svg {
+    width: var(--input-height);
+    height: auto;
+    transition: transform 400ms;
+}
+[open="true"] .filter-panel_arrow svg {
+    transform: rotate(180deg);
+}
+.storeTypeBtn .icon,
+.removeIcon_gmmir {  
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    display: inline-block;
+    vertical-align: middle;
+}

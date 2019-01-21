@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/search-box.css" />
+    <link rel="stylesheet" href="css/filter-panel.css" />
+    <link rel="stylesheet" href="css/store-details.css" />
+    <link rel="stylesheet" href="css/stores-list.css" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <button class="searchOpener" is="search-opener"></button>
+
+    <left-panel>
+        <search-box search-term="">
+            <div class="searchInputAndButtons">
+                <label for="searchInput" class="visuallyHidden">Cerca un negozio</label>
+                <div class="searchInputAndIcons">
+                    <svg version="1.1" class="searchIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                        xml:space="preserve">
+                        <g>
+                            <circle fill="none" stroke-width="2" stroke-miterlimit="10" cx="21" cy="21" r="20"></circle>
+                            <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="35" y1="35" x2="41" y2="41"></line>
+                            <rect x="46.257" y="37.065" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 121.9178 50.5)"
+                                fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" width="8.485"
+                                height="26.87"></rect>
+                        </g>
+                    </svg>
+                    <div class="searchInput">
+                        <input id="searchInput" type="text" placeholder="Inserisci una località">
+                        <search-suggestions suggestions="[]">
+                            <collapsable-tab open="false">        
+                                <ul></ul>  
+                            </collapsable-tab>
+                        </search-suggestions>
+                    </div>
+                    <button class="iconButton clearSearch">
+                        <span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                                xml:space="preserve">
+                                <g>
+                                    <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="18.947" y1="17.153"
+                                        x2="45.045" y2="43.056"></line>
+                                </g>
+                                <g>
+                                    <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="19.045" y1="43.153"
+                                        x2="44.947" y2="17.056"></line>
+                                </g>
+                            </svg></span>
+                        <span class="visuallyHidden">clear search</span>
+                    </button>
+                </div>
+                <button class="iconButton btn geolocalizeBtn">
+                    <span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                            xml:space="preserve">
+                            <g>
+                                <circle fill="none" stroke-width="2" stroke-miterlimit="10" cx="32" cy="22" r="6"></circle>
+                                <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M53,22.735C52.948,10.73,43.599,1,32,1s-21,9.73-21,21.735C11,38.271,31.965,63,31.965,63S53.069,38.271,53,22.735z"></path>
+                            </g>
+                        </svg></span>
+                    <span class="visuallyHidden">geolocate me</span>
+                </button>
+            </div>
+        </search-box>
+        <results-number stores-number="null">
+            loading stores
+        </results-number>
+
+        <filter-panel open="false" filters="[]" filters-applyed="[]">
+            <div class="filter-bar_header">
+                <button class="filter-panel_toggleBtn">
+                    <span class="filter-panel_toggleBtn_text">Filter results</span>
+                    <span class="icon filter-panel_arrow"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px"
+                            viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                            <g>
+                                <polyline fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10"
+                                    points="15,24 32,41 49,24 	"></polyline>
+                            </g>
+                        </svg></span>
+                </button>
+                <button class="btn filter-panel_resetBtn invisible" onclick="return document._componentRegistry[5]['handleReset'](event)">
+                    <span class="removeIcon_gmmir"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                            xml:space="preserve">
+                            <g>
+                                <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="18.947" y1="17.153" x2="45.045"
+                                    y2="43.056"></line>
+                            </g>
+                            <g>
+                                <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="19.045" y1="43.153" x2="44.947"
+                                    y2="17.056"></line>
+                            </g>
+                            <g>
+                                <circle fill="none" stroke-width="2" stroke-miterlimit="10" cx="32" cy="32" r="30.999"></circle>
+                            </g>
+                        </svg></span>
+                    <span class="text">reset filters</span>
+                </button>
+            </div>
+            <collapsable-tab>
+                <ul></ul>
+            </collapsable-tab>
+            <template id="filter-btn-template">
+                <button class="storeTypeBtn">
+                    <span class="icon invisible"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px"
+                            viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                            <g>
+                                <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="18.947" y1="17.153"
+                                    x2="45.045" y2="43.056"></line>
+                            </g>
+                            <g>
+                                <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="19.045" y1="43.153"
+                                    x2="44.947" y2="17.056"></line>
+                            </g>
+                        </svg></span>
+                    <span class="text"></span>
+                </button>
+            </template>
+        </filter-panel>
+
+        <div class="storesAndStoreDetails">
+            <stores-list stores="[]">
+                <template id="storeListElement">
+                    <li>
+                        <div>
+                            <div class="storeName"></div>
+                            <div class="storePhone">
+                                <span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64"
+                                        enable-background="new 0 0 64 64" xml:space="preserve">
+                                        <g>
+                                            <rect x="16" y="1" fill="none" stroke-width="2" stroke-miterlimit="10"
+                                                width="32" height="62"></rect>
+                                            <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="28" y1="5" x2="36"
+                                                y2="5"></line>
+                                            <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="16" y1="51"
+                                                x2="48" y2="51"></line>
+                                            <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="16" y1="9" x2="48"
+                                                y2="9"></line>
+                                            <circle fill="none" stroke-width="2" stroke-linejoin="bevel"
+                                                stroke-miterlimit="10" cx="32" cy="57" r="2"></circle>
+                                        </g>
+                                    </svg></span>
+                                <span class="text"></span>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                                xml:space="preserve">
+                                <g>
+                                    <polyline fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10"
+                                        points="27,15 44,32  27,49" />
+                                </g>
+                            </svg>
+                        </div>
+                    </li>
+                </template>
+            </stores-list>
+            <store-details class="storeDetails slide-out-right" store="{}">
+                <button class="backButton">
+                    <span class="icon">
+                        <svg class="backIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                            xml:space="preserve">
+                            <g>
+                                <polyline fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10"
+                                    points="37,15 20,32 37,49" />
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="text">close</span>
+                </button>
+
+                <div class="store">
+                    <div class="store_name"></div>
+                    <div class="store_phone">
+                        <span class="icon">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                                xml:space="preserve">
+                                <g>
+                                    <rect x="16" y="1" fill="none" stroke-width="2" stroke-miterlimit="10" width="32"
+                                        height="62" />
+                                    <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="28" y1="5" x2="36" y2="5" />
+                                    <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="16" y1="51" x2="48"
+                                        y2="51" />
+                                    <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="16" y1="9" x2="48" y2="9" />
+                                    <circle fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-miterlimit="10"
+                                        cx="32" cy="57" r="2" />
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="text"></span>
+                    </div>
+                    <div class="store_mail">
+                        <span class="icon">
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                                xml:space="preserve">
+                                <g>
+                                    <rect x="1" y="13" fill="none" stroke-width="2" stroke-miterlimit="10" width="62"
+                                        height="37" />
+                                    <polyline fill="none" stroke-width="2" stroke-miterlimit="10" points="1,13 32,33 63,13 	" />
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="text"><a href="#"></a></span>
+                    </div>
+                    <div class="store_categoriesTitle">Store categories</div>
+                    <!-- <ul class="store_categories" data-fiu data-for-each="productCategory">
+                            <template>
+                                <li data-fiu data-bind='{"value": "name"}'></li>
+                            </template>
+                        </ul> -->
+                    <div class="store_servicesTitle">Store services</div>
+                    <ul class="store_services">
+                        <li data-fiu data-if="hasMadeToMeasure">Made to measure</li>
+                        <li data-fiu data-if="hasTailoring">Tailoring</li>
+                        <li data-fiu data-if="gifCardAccepted">Gift card accepted</li>
+                        <li data-fiu data-if="hasWiFi">Wi-Fi</li>
+                        <li data-fiu data-if="pickUpInStore">Pick-up in store</li>
+                        <li data-fiu data-if="clickFromStore">Click from store</li>
+                        <li data-fiu data-if="bookable">Bookable</li>
+                    </ul>
+                </div>
+            </store-details>
+        </div>
+    </left-panel>
+    <stores-map></stores-map>
+
+    <script src="index.js" type="module"></script>
+</body>
+
+</html>

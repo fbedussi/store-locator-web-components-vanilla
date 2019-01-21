@@ -1,0 +1,4 @@
+- nel creare gli elementi è giusto metterli in variabili che si chiamano come gli elementi html?
+- cosa passare nelle props?
+- ogni elemento deve ragire solo alle props, e la connessione con lo stato centrale si fa solo in un controller od ognuno si collega allo stato?
+- nelle classi il template deve essere importato come proprietà o come costante nel modulo?
