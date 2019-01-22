@@ -1,11 +1,9 @@
 import { 
     dispatch, 
-    subscribePartialState 
 } from '../state/state-manager.js';
 import { 
     toggleFilterPanelAction, 
     resetStoreTypesAction,
-    toggleStoreTypeAction,
     actionWithLoading,
 } from '../state/actions.js';
 import './filter-btn.js';

@@ -3,8 +3,6 @@ import {
 } from '../state/state-manager.js';
 import {
     openStoreDetailsAction,
-    hideLoadingAction,
-    showLoadingAction,
 } from '../state/actions.js';
 
 const template = document.querySelector('#storeListElement');
@@ -15,7 +13,6 @@ class StoresListElement extends HTMLElement {
     }
     
     connectedCallback() {
-           
     }
 
     static get observedAttributes() {
@@ -36,6 +33,7 @@ class StoresListElement extends HTMLElement {
 
     update(store) {
         this.innerHTML = template.innerHTML;
+        this.storeId = store.id;
         this.querySelector('.storeName').innerText = store.name;
         this.querySelector('.storePhone .text').innerText = store.phone;
         this.addEventListener('click', this.handleStoreClick.bind(this, store));

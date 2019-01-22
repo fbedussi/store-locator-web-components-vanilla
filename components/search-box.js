@@ -1,6 +1,5 @@
 import { 
     dispatch,
-    subscribePartialState,
 } from '../state/state-manager.js';
 import {
   updateSearchTermAction,
@@ -21,9 +20,6 @@ class SearchBox extends HTMLElement {
         this.input.addEventListener('input', this.handleInput.bind(this));
         this.resetBtn.addEventListener('click', this.handleReset.bind(this))
         this.geolocateBtn.addEventListener('click', this.handleGeoLocation.bind(this));
-        subscribePartialState('searchTerm', (state) => {
-           this.searchTerm = state.searchTerm;
-        });
     }
 
     static get observedAttributes() {

@@ -9,14 +9,6 @@ class SearchOpener extends HTMLButtonElement {
     }
 
     connectedCallback() {
-        this.render();
-    }
-
-    render() {
-        this.innerHTML =/*html*/`
-            <span class="icon">${SearchIcon()}</span>
-            <span class="text visuallyHidden">Search</span>
-        `;
         this.addEventListener('click', function () {
             dispatch(toggleSearchLayerAction());
         })

@@ -35,7 +35,7 @@ search-suggestions ul {
     flex: 1;
     position: relative;
 }
-.geolocalizeIcon {
+.geolocalizeBtn {
     height: calc(var(--input-height) + (var(--border-thickness) * 2));
     width: calc(var(--input-height) + (var(--border-thickness) * 2));
 }

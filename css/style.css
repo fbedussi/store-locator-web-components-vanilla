@@ -232,6 +232,7 @@ left-panel {
     width: calc(100% - (var(--padding) * 2));
     box-shadow: 4px 4px 4px lightgray;
     will-change: transform;
+    animation: slide-out-right 0.4s forwards;
 }
 
 .storesAndStoreDetails {
@@ -244,7 +245,7 @@ left-panel {
     left-panel.hiddenLight,
     left-panel {
         visibility: visible;
-        animation: slide-in-left;
+        animation: none !important;
         width: 24rem;
     }
 }

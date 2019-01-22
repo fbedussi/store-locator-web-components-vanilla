@@ -7,12 +7,26 @@
     <link rel="stylesheet" href="css/filter-panel.css" />
     <link rel="stylesheet" href="css/store-details.css" />
     <link rel="stylesheet" href="css/stores-list.css" />
-    <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <button class="searchOpener" is="search-opener"></button>
+    <button class="searchOpener" is="search-opener">
+        <span class="icon">
+            <svg version="1.1" class="searchIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                xml:space="preserve">
+                <g>
+                    <circle fill="none" stroke-width="2" stroke-miterlimit="10" cx="21" cy="21" r="20" />
+                    <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="35" y1="35" x2="41" y2="41" />
+                    <rect x="46.257" y="37.065" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 121.9178 50.5)" fill="none"
+                        stroke="#000000" stroke-width="2" stroke-miterlimit="10" width="8.485" height="26.87" />
+                </g>
+            </svg>
+        </span>
+        <span class="text visuallyHidden">Search</span>
+    </button>
 
     <left-panel>
         <search-box search-term="">
@@ -33,8 +47,8 @@
                     <div class="searchInput">
                         <input id="searchInput" type="text" placeholder="Inserisci una località">
                         <search-suggestions suggestions="[]">
-                            <collapsable-tab open="false">        
-                                <ul></ul>  
+                            <collapsable-tab open="false">
+                                <ul></ul>
                             </collapsable-tab>
                         </search-suggestions>
                     </div>
@@ -108,16 +122,16 @@
             </collapsable-tab>
             <template id="filter-btn-template">
                 <button class="storeTypeBtn">
-                    <span class="icon invisible"><svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px" height="64px"
-                            viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+                    <span class="icon invisible"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            x="0px" y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64"
+                            xml:space="preserve">
                             <g>
-                                <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="18.947" y1="17.153"
-                                    x2="45.045" y2="43.056"></line>
+                                <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="18.947" y1="17.153" x2="45.045"
+                                    y2="43.056"></line>
                             </g>
                             <g>
-                                <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="19.045" y1="43.153"
-                                    x2="44.947" y2="17.056"></line>
+                                <line fill="none" stroke-width="2" stroke-miterlimit="10" x1="19.045" y1="43.153" x2="44.947"
+                                    y2="17.056"></line>
                             </g>
                         </svg></span>
                     <span class="text"></span>
@@ -164,7 +178,7 @@
                     </li>
                 </template>
             </stores-list>
-            <store-details class="storeDetails slide-out-right" store="{}">
+            <store-details class="storeDetails slide-out-right">
                 <button class="backButton">
                     <span class="icon">
                         <svg class="backIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -215,20 +229,16 @@
                         <span class="text"><a href="#"></a></span>
                     </div>
                     <div class="store_categoriesTitle">Store categories</div>
-                    <!-- <ul class="store_categories" data-fiu data-for-each="productCategory">
-                            <template>
-                                <li data-fiu data-bind='{"value": "name"}'></li>
-                            </template>
-                        </ul> -->
+                    <ul class="store_categories"></ul>
                     <div class="store_servicesTitle">Store services</div>
                     <ul class="store_services">
-                        <li data-fiu data-if="hasMadeToMeasure">Made to measure</li>
-                        <li data-fiu data-if="hasTailoring">Tailoring</li>
-                        <li data-fiu data-if="gifCardAccepted">Gift card accepted</li>
-                        <li data-fiu data-if="hasWiFi">Wi-Fi</li>
-                        <li data-fiu data-if="pickUpInStore">Pick-up in store</li>
-                        <li data-fiu data-if="clickFromStore">Click from store</li>
-                        <li data-fiu data-if="bookable">Bookable</li>
+                        <li data-service="hasTailoring">Tailoring</li>
+                        <li data-service="hasMadeToMeasure">Made to measure</li>
+                        <li data-service="gifCardAccepted">Gift card accepted</li>
+                        <li data-service="hasWiFi">Wi-Fi</li>
+                        <li data-service="pickUpInStore">Pick-up in store</li>
+                        <li data-service="clickFromStore">Click from store</li>
+                        <li data-service="bookable">Bookable</li>
                     </ul>
                 </div>
             </store-details>

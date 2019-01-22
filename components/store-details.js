@@ -11,6 +11,7 @@ class StoreDetails extends HTMLElement {
         this.name = this.querySelector('.store_name');
         this.phone = this.querySelector('.store_phone .text');
         this.mail = this.querySelector('.store_mail .text a');
+        this.categories = this.querySelector('.store_categories');
     }
     
     connectedCallback() {
@@ -36,7 +37,7 @@ class StoreDetails extends HTMLElement {
     update(store) {
         this.classList.toggle('slide-in-left', store); 
         this.classList.toggle('slide-out-right', !store); 
-
+        
         if (!store) {
             return;
         }
@@ -45,6 +46,13 @@ class StoreDetails extends HTMLElement {
         this.phone.innerText = store.phone;
         this.mail.innerText = store.mail;
         this.mail.href = 'mailto:' + store.mail;
+        this.querySelectorAll('[data-service]').forEach((serviceEl) => serviceEl.hidden = !store[serviceEl.dataset.service]);
+        this.categories.innerHTML = '';
+        store.productCategory.forEach((category) => {
+            const li = document.createElement('li');
+            li.innerText = category.name;
+            this.categories.appendChild(li);
+        })
     }
 
     closePanel() {
