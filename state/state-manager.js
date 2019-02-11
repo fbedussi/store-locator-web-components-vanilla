@@ -1,5 +1,5 @@
-import { createStore, applyMiddleware } from './redux4.min.js';
-import thunk from '../redux-thunk.js';
+import { createStore, applyMiddleware } from '../vendor/redux4.min.js';
+import thunk from '../vendor/redux-thunk.js';
 import reducer from './reducer.js';
 import state from './state.js';
 

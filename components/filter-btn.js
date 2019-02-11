@@ -30,28 +30,22 @@ class FilterBtn extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         switch (name) {
             case 'filter':
-                this.handleFilter(newValue);
+                this.setFilter(newValue);
                 break;
             case 'applied':
-                this.handleApplied(newValue);
+                this.setApplied(newValue);
                 break;
         }
         this.update(name, newValue);
     };
 
-    get filter() {
-        return this.getAttribute('filter');
-    }
-
-    set filter(newValue) {
+    setFilter(newValue) {
+        this.filger = newValue;
         this.handleFilter(newValue);
     }
 
-    get applied() {
-        return this.getAttribute('open');
-    }
-
-    set applied(newValue) {
+    setApplied(newValue) {
+        this.applied = newValue;
         this.handleApplied(newValue);
     }
 

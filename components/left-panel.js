@@ -24,14 +24,11 @@ class LeftPanel extends HTMLElement {
     }
     
     attributeChangedCallback(name, oldValue, newValue) {
-        this.update(newValue);
+        this.setOpen(newValue === 'true' ? true : false);
     };
 
-    get open() { 
-        return this.getAttribute('stores-number');
-    }
-
-    set open(newValue) { 
+    setOpen(newValue) { 
+        this.open = newValue;
         this.update(newValue);
     }
 

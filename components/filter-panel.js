@@ -15,7 +15,6 @@ class FilterPanel extends HTMLElement {
         this.resetBtn = this.querySelector('.filter-panel_resetBtn');
         this.panel = this.querySelector('collapsable-tab');
         this.list = this.querySelector('ul');
-        // this.filterBtns = [];
     }
     
     connectedCallback() {
@@ -30,37 +29,28 @@ class FilterPanel extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) {
         switch (name) {
             case 'filters':
-                this.handleFilters(JSON.parse(newValue));
+                this.setFilters(JSON.parse(newValue));
                 break;
             case 'open':
-                this.handleOpen(newValue === 'true' ? true : false);
+                this.setOpen(newValue === 'true' ? true : false);
                 break;
             case 'filters-applied':
-                this.handleFiltersApplied(newValue);
+                this.setFiltersApplied(JSON.parse(newValue));
         }
     };
 
-    get filters() { 
-        return this.getAttribute('filters');
-    }
-
-    set filters(newValue) { 
+    setFilters(newValue) {
+        this.filters = newValue;
         this.handleFilters(newValue);
     }
 
-    get open() { 
-        return this.getAttribute('open');
+    setOpen(newValue) { 
+        this.open = newValue;
+        this.handleOpen(newValue);
     }
 
-    set open(newValue) { 
-        this.setAttribute('open', newValue ? 'true' : 'false');
-    }
-
-    get filtersApplied() { 
-        return this.getAttribute('filters-applied');
-    }
-
-    set filtersApplied(newValue) { 
+    setFiltersApplied(newValue) {
+        this.filtersApplied = newValue;
         this.handleFiltersApplied(newValue);
     }
 
@@ -82,15 +72,16 @@ class FilterPanel extends HTMLElement {
         this.filterBtns = filters.map((filter) => {
             const filterBtn = document.createElement('filter-btn');
             this.list.appendChild(filterBtn);
-            filterBtn.filter = filter;
-            filterBtn.applied = false;
+            filterBtn.setFilter(filter);
+            filterBtn.setApplied(false);
             return filterBtn;
         });
     }
 
     handleFiltersApplied(filtersApplied) {
         this.filterBtns.forEach((filterBtn) => {
-            filterBtn.applied = filtersApplied.includes(filterBtn.filterId) 
+            const applied = filtersApplied.includes(filterBtn.filterId);
+            filterBtn.setApplied(applied);
         });
     }
 }

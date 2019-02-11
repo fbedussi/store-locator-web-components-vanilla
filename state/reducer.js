@@ -50,6 +50,7 @@ function toggleStoreType(storeTypeIds, storeTypeId) {
 }
 
 const reducer = (state, action) => {
+    console.log(action.type);
     switch (action.type) {
         case LOAD_STORES:
             const visibleStores = action.stores.map(setStoreVisibilityFromFilters(state.filters));

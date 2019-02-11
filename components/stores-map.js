@@ -25,6 +25,7 @@ class StoresMap extends HTMLElement {
             .gm-bundled-control {
                 bottom: 69px!important;
                 right: 28px!important;
+
             }
             .gm-bundled-control > div > div {
                 width: 28px!important;
@@ -47,7 +48,7 @@ class StoresMap extends HTMLElement {
     this.appendChild(styleNode);
 
     this.mapElement = document.createElement('div');
-    this.mapElement.classList = 'map';
+    this.mapElement.className = 'map';
 
     this.appendChild(this.mapElement);
   }

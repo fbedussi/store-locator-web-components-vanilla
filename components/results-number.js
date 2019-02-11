@@ -8,16 +8,13 @@ class ResultsNumber extends HTMLElement {
     }
     
     attributeChangedCallback(name, oldValue, newValue) {
-        this.update(newValue);
+        this.setStoresNumber(newValue);
     };
 
-    get storesNumber() { 
-        return this.getAttribute('stores-number');
-    }
-
-    set storesNumber(newValue) { 
+    setStoresNumber(newValue) { 
+        this.storesNumber = newValue;
         this.update(newValue);
-    } 
+    }
 
     update(value) {
         const numebrOfSelectedStores = Number(value);

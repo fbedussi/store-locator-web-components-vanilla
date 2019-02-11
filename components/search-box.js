@@ -26,16 +26,13 @@ class SearchBox extends HTMLElement {
         return ['search-term'];
     }
 
-    get searchTerm() { 
-        return this.getAttribute('search-term');
+    setSearchTerm(newValue) {
+        this.searchTerm = newValue;
+        this.update(newValue);
     }
 
-    set searchTerm(newValue) { 
-        this.update(newValue);
-    } 
-
     attributeChangedCallback(name, oldValue, newValue) {
-        this.update(newValue);
+        this.setSearchTerm(newValue);
     }
 
     update(value) {

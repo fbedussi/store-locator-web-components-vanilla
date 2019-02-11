@@ -10,7 +10,7 @@ import './components/stores-map.js';
 import './components/filter-panel.js';
 import './components/store-details.js';
 import './components/collapsable-tab.js';
-import './components/search-opener.js';
+//import './components/search-opener.js';
 import './components/left-panel.js';
 import init from './controller.js';
 
@@ -48,4 +48,5 @@ document.body.addEventListener('click', function(ev) {
     document.body.classList.remove('keyboardNavigation');
 });
 
-init();
+//SetTimeout is needed on IE
+setTimeout(init, 0); 

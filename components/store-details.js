@@ -23,16 +23,13 @@ class StoreDetails extends HTMLElement {
     }
     
     attributeChangedCallback(name, oldValue, newValue) {
-        this.update(newValue);
+        this.setStore(JSON.parse(newValue));
     };
 
-    get store() { 
-        return this.getAttribute('store');
-    }
-
-    set store(newValue) { 
+    setStore(newValue) {
+        this.store = newValue;
         this.update(newValue);
-    } 
+    }
 
     update(store) {
         this.classList.toggle('slide-in-left', store); 

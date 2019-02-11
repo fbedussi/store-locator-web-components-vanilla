@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="css/stores-list.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
+    <script nomodule src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.2.5/polyfill.js"></script>    
+    
+    <!-- <script src="https://unpkg.com/@webcomponents/custom-elements"></script> -->
+    <script nomodule src="node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 </head>
 
 <body>
@@ -246,7 +252,9 @@
     </left-panel>
     <stores-map></stores-map>
 
+    
     <script src="index.js" type="module"></script>
+    <script src="dist/bundle.js" nomodule ></script>
 </body>
 
 </html>

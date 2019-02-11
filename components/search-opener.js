@@ -4,9 +4,9 @@ import {
 import { toggleSearchLayerAction } from '../state/actions.js';
 
 class SearchOpener extends HTMLButtonElement {
-    constructor() {
-        super();
-    }
+    // constructor() {
+    //     super();
+    // }
 
     connectedCallback() {
         this.addEventListener('click', function () {

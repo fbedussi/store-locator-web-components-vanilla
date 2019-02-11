@@ -6,7 +6,6 @@ class StoresList extends HTMLElement {
     }
 
     connectedCallback() {
-
     }
 
     static get observedAttributes() {
@@ -14,14 +13,15 @@ class StoresList extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        this.update(JSON.parse(newValue));
+        this.setStores(JSON.parse(newValue));
     };
 
-    get stores() {
-        return this.getAttribute('stores');
+    setStores(newValue) {
+        this.stores = newValue;
+        this.handleStoreUpdate(newValue);
     }
-
-    set stores(newValue) {
+    
+    handleStoreUpdate(newValue) {
         const alreadyRendered = this.querySelectorAll('stores-list-element').length;
         
         if (alreadyRendered) {
@@ -36,7 +36,7 @@ class StoresList extends HTMLElement {
 
         allStores.forEach((store) => {
             const storeListElement = document.createElement('stores-list-element');
-            storeListElement.store = store;
+            storeListElement.setStore(store);
             storeListElement.hidden = !store.visible;
             ul.appendChild(storeListElement);
         });
