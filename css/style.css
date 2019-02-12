@@ -254,7 +254,7 @@ results-number {
     padding: var(--padding);
 }  
 
-.searchOpener {
+search-opener {
     border: solid 1px lightgray;
     position: absolute;
     z-index: 10;
@@ -263,7 +263,7 @@ results-number {
 }
 
 @media screen and (min-width: var(--desktop-min-width)) {
-    .searchOpener {
+    search-opener {
         display: none;
     }
 }

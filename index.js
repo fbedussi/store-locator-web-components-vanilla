@@ -10,7 +10,7 @@ import './components/stores-map.js';
 import './components/filter-panel.js';
 import './components/store-details.js';
 import './components/collapsable-tab.js';
-//import './components/search-opener.js';
+import './components/search-opener.js';
 import './components/left-panel.js';
 import init from './controller.js';
 
@@ -39,14 +39,16 @@ fetch('data/locations.json')
 decodeRoute();
 window.onpopstate = decodeRoute;
 
-document.body.addEventListener('keydown', function(ev) {
+document.body.addEventListener('keydown', function (ev) {
     if (ev.keyCode === 9) {
         document.body.classList.add('keyboardNavigation');
     }
 });
-document.body.addEventListener('click', function(ev) {
+document.body.addEventListener('click', function (ev) {
     document.body.classList.remove('keyboardNavigation');
 });
 
-//SetTimeout is needed on IE
-setTimeout(init, 0); 
+//This check is needed on IE
+document.addEventListener('WebComponentsReady', function (e) {
+    init();
+});
