@@ -1,5 +1,5 @@
 import { subscribePartialState } from './state/state-manager.js';
-import { throttle } from '../utils.js';
+import { throttle } from './utils.js';
 
 export default function init() {
     const searchBox = document.querySelector('search-box');
